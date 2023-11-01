@@ -29,3 +29,7 @@ body {
     margin: 0;
     border-bottom: 1px solid #ddd;
 }
+
+.section__body {
+    padding: 20px;
+}
