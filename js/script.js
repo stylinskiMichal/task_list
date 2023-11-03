@@ -1,21 +1,30 @@
 {
-    const tasks = [];
+    let tasks = [];
+    let hideDoneTasks = false;
 
     const removeTask = (taskIndex) => {
-        tasks.splice(taskIndex, 1);
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            ...tasks.slice(taskIndex + 1),
+        ];
         render();
     };
 
     const toggleTaskDone = (taskIndex) => {
-        tasks[taskIndex].done = !tasks[taskIndex].done;
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            {
+                ...tasks[taskIndex],
+                done: !tasks[taskIndex].done,
+            },
+            ...tasks.slice(taskIndex + 1),
+        ];
+
         render();
     };
 
-    const addNewTasak = (newTaskContent) => {
-        tasks.push({
-            content: newTaskContent,
-        });
-
+    const addNewTask = (newTaskContent) => {
+        tasks = [...tasks, {content: newTaskContent }];
         render();
     };
 
@@ -74,7 +83,7 @@
         const newTaskContent = newTaskElement.value.trim();
 
         if (newTaskContent !== "") {
-            addNewTasak(newTaskContent);
+            addNewTask(newTaskContent);
             newTaskElement.value = "";
         }
 
