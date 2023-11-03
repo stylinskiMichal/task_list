@@ -15,7 +15,7 @@ body {
     max-width: 700px;
     margin: 0 auto;
     padding: 20px 20px;
-    
+
 }
 
 .section {
@@ -29,12 +29,16 @@ body {
     padding: 20px;
     margin: 0;
     border-bottom: 1px solid #ddd;
-    display:grid;
+    display: grid;
     grid-template-columns: auto auto;
     grid-gap: 20px;
     justify-content: space-between;
     align-items: center;
+
+
 }
+
+
 
 .section__body {
     padding: 20px;
@@ -49,6 +53,7 @@ body {
 @media(max-width: 767px) {
     .form {
         grid-template-columns: 1fr;
+        margin: 10px;
     }
 }
 
@@ -59,17 +64,19 @@ body {
 
 .form__button {
     padding: 10px;
-    background:hsl(180, 100%, 25%) ;
+    background: hsl(180, 100%, 25%);
     color: white;
-    border:none;
+    border: none;
+    transition: color 0.3s;
 }
 
 .form__button:hover {
-    background:hsl(180, 100%, 30%) ;
+    background: hsl(180, 100%, 30%);
+    transform: scale(1, 1);
 }
 
 .form__button:active {
-    background:hsl(180, 100%, 50%) ;
+    background: hsl(180, 100%, 50%);
 }
 
 .tasks {
@@ -81,7 +88,7 @@ body {
 .tasks__item {
     display: grid;
     grid-template-columns: auto 1fr auto;
-    grid-gap:10px;
+    grid-gap: 10px;
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #ddd;
@@ -100,9 +107,9 @@ body {
 }
 
 .tasks__button {
-    border:none;
-    color:white;
-    width:30px;
+    border: none;
+    color: white;
+    width: 30px;
     height: 30px;
     padding: 0;
 }
@@ -124,7 +131,7 @@ body {
 }
 
 .tasks__item--hidden {
-display: none;
+    display: none;
 }
 
 .buttons {
@@ -142,4 +149,17 @@ display: none;
 
 .buttons__button:disabled {
     color: #ccc;
+}
+
+.buttons__button:hover {
+    color:hsl(180, 100%, 40%)080;
+}
+
+.buttons__button:active {
+color:hsl(180, 100%, 60%)080;
+}
+
+.section__title {
+    font-size: 20px;
+    margin: 0;
 }
